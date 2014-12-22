@@ -1,30 +1,33 @@
 package codewarsPackage;
-
 import java.util.*;
 
-
 public class UniqueArray {
-	public static int[] unique(int[] integers) {
-		
-		ArrayList<Integer> tempList = new ArrayList<Integer>();
-		
-		for (int i = 0; i < integers.length; i++) {
-			tempList.add( integers[i] );
-		}
 
+  public static int[] unique( int[] integers ) {
 
-for (Integer integera : tempList) {
-	System.out.println(integera);
-}
-	
+    ArrayList<Integer> e = new ArrayList<Integer>();
 
-		return integers;
+    for (int i : integers) {
+      if( !e.contains( i ) ) e.add( i );
+    }
 
+    int[] output = new int[ e.size() ];
 
-	}
-	public static void main(String[] args) {
-		
-	int [] e = {2,3,4,5};
-		System.out.println( unique( e ) );
-	}
+    for (int i=0; i<e.size(); i++) {
+      output[ i ] = e.get( i );
+    }
+
+    return output;
+
+  }
+
+  public static void main( String[] args ) {
+
+    int[] duplicatesInOrder2 = new int[]{1, 2, 3, 3, 2, 1, 2, 3, 1, 1, 3, 2};
+    
+    
+    
+    
+    System.out.println( unique(duplicatesInOrder2) );
+  }
 }
